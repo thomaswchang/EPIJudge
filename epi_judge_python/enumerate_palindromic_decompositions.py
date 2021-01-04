@@ -2,6 +2,7 @@ from typing import List
 
 from test_framework import generic_test
 
+# [PROBLEM_TYPE=RECURSION]
 
 def palindrome_decompositions(text: str) -> List[List[str]]:
     # TODO - you fill in here.

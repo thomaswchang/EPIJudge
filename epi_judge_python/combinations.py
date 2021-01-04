@@ -2,6 +2,7 @@ from typing import List
 
 from test_framework import generic_test, test_utils
 
+# [PROBLEM_TYPE=RECURSION]
 
 def combinations(n: int, k: int) -> List[List[int]]:
     # TODO - you fill in here.

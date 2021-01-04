@@ -2,6 +2,7 @@ from typing import List
 
 from test_framework import generic_test, test_utils
 
+# [PROBLEM_TYPE=RECURSION]
 
 def permutations(A: List[int]) -> List[List[int]]:
     # TODO - you fill in here.

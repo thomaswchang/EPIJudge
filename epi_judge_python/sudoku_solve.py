@@ -7,6 +7,7 @@ from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
 
+# [PROBLEM_TYPE=RECURSION]
 
 def solve_sudoku(partial_assignment: List[List[int]]) -> bool:
     # TODO - you fill in here.
