@@ -1,22 +1,29 @@
 from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 
+# [PROBLEM_TYPE=STACKQUEUE]
 
+import collections
+
+# Implement a stack to include a max operation, which returns the maximum value stored in the stack
+# Each element contains a reference to its max element.
 class Stack:
+    ElementWithCachedMax = collections.namedtuple('ElemenWithCachedMax', ('value', 'max'))
+
+    def __init__(self) -> None:
+        self._cache : List[Stack.ElementWithCachedMax] = []
+
     def empty(self) -> bool:
-        # TODO - you fill in here.
-        return True
+        return len(self._cache) == 0
 
     def max(self) -> int:
-        # TODO - you fill in here.
-        return 0
+        return self._cache[-1].max
 
     def pop(self) -> int:
-        # TODO - you fill in here.
-        return 0
+        return self._cache.pop().value
 
     def push(self, x: int) -> None:
-        # TODO - you fill in here.
+        self._cache.append( self.ElementWithCachedMax(x, x if self.empty() else  max(x, self.max())))
         return
 
 
