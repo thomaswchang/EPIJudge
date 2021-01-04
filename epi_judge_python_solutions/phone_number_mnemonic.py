@@ -6,7 +6,7 @@ from test_framework import generic_test, test_utils
 # The mapping from digit to corresponding characters.
 MAPPING = ('0', '1', 'ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ')
 
-
+# [PROBLEM_TYPE=RECURSION]
 def phone_mnemonic(phone_number: str) -> List[str]:
     def phone_mnemonic_helper(digit: int) -> None:
         if digit == len(phone_number):

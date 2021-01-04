@@ -25,7 +25,7 @@ def generate_first_k_a_b_sqrt2(k: int) -> List[float]:
     # Initial for 0 + 0 * sqrt(2).
     candidates = bintrees.RBTree([(Number(0, 0), None)])
 
-    result: List[float] = []
+    result = [] #: List[float] = []
     while len(result) < k:
         next_smallest = candidates.pop_min()[0]
         result.append(next_smallest.val)
