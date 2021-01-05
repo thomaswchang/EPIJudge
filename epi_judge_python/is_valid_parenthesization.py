@@ -1,9 +1,20 @@
 from test_framework import generic_test
 
+# [PROBLEM_TYPE=STACKQUEUE]
 
+# pg 103: P 8.3
+# well formed = [()[]()]
 def is_well_formed(s: str) -> bool:
-    # TODO - you fill in here.
-    return True
+    lookup = { '(': ')', '[':']', '{':'}'}
+    left_chars = []
+
+    for c in s:
+        if c in lookup:
+            left_chars.append(c)
+        else: # right chars
+            if not left_chars or lookup[left_chars.pop()] != c:
+                return False
+    return not left_chars
 
 
 if __name__ == '__main__':
