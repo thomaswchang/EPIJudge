@@ -5,7 +5,7 @@ from test_framework import generic_test
 
 # [PROBLEM_TYPE=STACKQUEUE]
 
-#class BinaryTreeNode:
+# class BinaryTreeNode:
 #    def __init__(self, data, left=None, right=None):
 #        self.data = data
 #        self.left = left
@@ -21,8 +21,8 @@ def binary_tree_depth_order(tree: BinaryTreeNode) -> List[List[int]]:
         result.append([node.data for node in queue])
 
         # Update queue using nested list comprehension
-        queue = [child for node in queue
-            for child in (node.left, node.right) if child]
+        queue = [ child for node in queue
+            for child in (node.left, node.right) if child ]
 
     return result
 
