@@ -15,7 +15,7 @@ def is_symmetric(tree: BinaryTreeNode) -> bool:
                 check(tree1.right, tree2.left)
             )
         return False
-    
+
     return check(tree.left, tree.right)
 
 if __name__ == '__main__':

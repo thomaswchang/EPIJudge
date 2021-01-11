@@ -35,7 +35,7 @@ def compute_tower_hanoi(num_rings: int) -> List[List[int]]:
 
     # Initialize pegs.
     result: List[List[int]] = []
-    pegs = [list(reversed(range(1, num_rings + 1)))
+    pegs = [list(reversed(range(1, num_rings + 1))) # pegs is a nested array of 3 inner arrays. Each inner array represent one peg.
             ] + [[] for _ in range(1, NUM_PEGS)]
     compute_tower_hanoi_steps(num_rings, 0, 1, 2)
     return result

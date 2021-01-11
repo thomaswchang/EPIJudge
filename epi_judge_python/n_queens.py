@@ -12,7 +12,7 @@ def n_queens(n: int) -> List[List[int]]:
         else:
             # Iterate through each column: 0, 1, 2, n-1
             for cur_col in range(n):
-                # This is the reason why we need only 1 copy of col_placment, even after we get a correct solution.
+                # This is the reason why we need only 1 copy of col_placement, even after we get a correct solution.
                 # Let assume we have a solution in the prev cur_col-1 loop.  When we revisit the cur_col in range(n) loop,
                 # we rewrite col_placement  from curr_col.  This similar logic happens for row; why we don't need to recreated every row solution path.
 
@@ -22,7 +22,7 @@ def n_queens(n: int) -> List[List[int]]:
                     abs(col_of_prev_queens - cur_col) not in (0, row-i)
                     for  i, col_of_prev_queens in enumerate(col_placement[:row]) # c = col of previously placed queen
                 ):
-                    col_placement[row] = cur_col
+                    col_placement[row] = cur_col # We are REUSING col_placement for each row,col
                     helper(row + 1)
 
     solutions = []
