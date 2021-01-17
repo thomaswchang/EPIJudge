@@ -4,6 +4,8 @@ from test_framework import generic_test, test_utils
 
 # [PROBLEM_TYPE=RECURSION]
 
+# Given: S={0,1,2}
+# SOLUTION: [0], [1], [2], [0,1], [0,2], ... [0,1,2]
 
 # Time complexity:
 #       ~ to number of function calls C(n) per function: C(n) = 2*C(n-1) --> 2^n

@@ -4,6 +4,8 @@ from test_framework import generic_test, test_utils
 
 # [PROBLEM_TYPE=RECURSION]
 
+# Generate all permutation of an array
+# Given [2,3,5,7] -> [2,3,5,7], [2,5,3,7]
 def permutations(A: List[int]) -> List[List[int]]:
     # Runtime:
     #   proportional to number of function calls C(n) = 1 + n C(n-1) --> n * n!
