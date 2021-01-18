@@ -1,6 +1,13 @@
 from test_framework import generic_test
 
 # [PROBLEM_TYPE=DP]
+# Step1: How to recognize a problem is a DP? What is the recurrence?
+
+# Step2: Decide the state. What is the key to the lookup table?
+
+# Step3: Formulate a relation among the states
+
+# Step4:  Optimize by adding tabulation or memoization
 
 def number_of_ways_to_top(top: int, maximum_step: int) -> int:
     # TODO - you fill in here.
