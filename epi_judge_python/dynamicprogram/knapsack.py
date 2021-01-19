@@ -38,7 +38,10 @@ def optimum_subject_to_capacity(items: List[Item], capacity: int) -> int:
 
         without_this_item = recurse(i-1, available_capacity)
 
-        with_item = 0if available_capacity < items[i].weight else items[i].value + recurse(i-1, available_capacity- items[i].weight)
+        # Break ternary assignmnet to be more readable
+        with_item = 0
+        if available_capacity >= items[i].weight:
+            with_item =  items[i].value + recurse(i-1, available_capacity - items[i].weight)
 
         return max(without_this_item, with_item)
 
