@@ -32,7 +32,6 @@ def optimum_subject_to_capacity(items: List[Item], capacity: int) -> int:
     #returns optimum value for state (i, available_capacity)
     @functools.lru_cache(None)
     def recurse(i: int, available_capacity: int) -> int :
-        print(f'i={i} available_capacity={available_capacity}')
         if i < 0: # i represent the row of our grid, even if we don't have a grid.
             return 0
 
