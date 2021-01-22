@@ -3,10 +3,10 @@ from typing import List
 from binary_tree_node import BinaryTreeNode
 from test_framework import generic_test
 
-
 def inorder_traversal(tree: BinaryTreeNode) -> List[int]:
 
     result = []
+
 
     in_process = [(tree, False)]
     while in_process:

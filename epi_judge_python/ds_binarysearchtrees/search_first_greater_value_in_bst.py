@@ -3,11 +3,24 @@ from typing import Optional
 from bst_node import BstNode
 from test_framework import generic_test
 
-# TYPE=BINARYSEARCHTREE
+# TYPE=BINARYSEARCHTREE PG 206
+
+# Given a BST and input value, find the first number greater than the input value.
+
+class BstNode():
+    def __init__(self, data=None, left=None, right=None):
+        self.data, self.left, self.right = data, left, right
 
 def find_first_greater_than_k(tree: BstNode, k: int) -> Optional[BstNode]:
-    # TODO - you fill in here.
-    return None
+    next_node, candidate_node = tree, None
+
+    while next_node:
+        if next_node.data < k:
+            next_node, candidate_node = next_node.left, next_node
+        else:
+            next_node = next_node.right
+
+    return candidate_node
 
 
 def find_first_greater_than_k_wrapper(tree, k):
