@@ -7,12 +7,35 @@ from test_framework.binary_tree_utils import must_find_node, strip_parent_link
 from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
 
-# PROBLEM_TYPE=BINARYTREE
+import collections
 
-def lca(tree: BinaryTreeNode, node0: BinaryTreeNode,
+# PROBLEM_TYPE=BINARYTREE PG 120
+
+def lca(tree: BinaryTreeNode,
+        node0: BinaryTreeNode,
         node1: BinaryTreeNode) -> Optional[BinaryTreeNode]:
-    # TODO - you fill in here.
-    return None
+
+    Status = collections.namedtuple('Status', ('num_occurences_in_subtree', 'ancestor'))
+
+    def recurse(tree, node0, node1) -> Status:
+        if tree is None:
+            return Status(num_occurences_in_subtree=0, ancestor=None)
+
+        left_status = recurse(tree.left, node0, node1)
+        if left_status.num_occurences_in_subtree == 2:
+            return left_status
+
+        right_status = recurse(tree.right, node0, node1)
+        if right_status.num_occurences_in_subtree == 2:
+            return right_status
+
+        num_total_occurences = \
+            left_status.num_occurences_in_subtree + \
+            right_status.num_occurences_in_subtree + (node0, node1).count(tree)
+
+        return Status(num_total_occurences, tree if num_total_occurences==2 else None)
+
+    return recurse(tree, node0, node1).ancestor
 
 
 @enable_executor_hook
