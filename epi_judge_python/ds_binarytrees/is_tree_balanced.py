@@ -2,7 +2,7 @@ from binary_tree_node import BinaryTreeNode
 from test_framework import generic_test
 from collections import namedtuple
 
-# [PROBLEM_TYPE=BINARYTREE]
+# [PROBLEM_TYPE=BINARYTREE] P116
 
 def is_balanced_binary_tree(tree: BinaryTreeNode) -> bool:
     StatusWithHeight = namedtuple('StatusWithHeight', ('bBalanced', 'height'))

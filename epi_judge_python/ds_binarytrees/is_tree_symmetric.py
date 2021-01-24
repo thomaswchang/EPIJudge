@@ -1,7 +1,7 @@
 from binary_tree_node import BinaryTreeNode
 from test_framework import generic_test
 
-# [PROBLEM_TYPE=BINARYTREE]
+# [PROBLEM_TYPE=BINARYTREE] P118
 
 def is_symmetric(tree: BinaryTreeNode) -> bool:
 
