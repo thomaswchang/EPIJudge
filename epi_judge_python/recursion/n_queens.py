@@ -2,7 +2,9 @@ from typing import List
 
 from test_framework import generic_test
 
-# [PROBLEM_TYPE=RECURSION]
+# [PROBLEM_TYPE=RECURSION] P228 P15.3
+
+# Generate all possible combinations where QUEENS are not in the same rows, col, or diaggonal
 
 def n_queens(n: int) -> List[List[int]]:
     def helper(row):
@@ -10,7 +12,7 @@ def n_queens(n: int) -> List[List[int]]:
             solutions.append(col_placement.copy()) # This is a shallow copy, but this is OK since we don't have compound objects.
             return
         else:
-            # Iterate through each column: 0, 1, 2, n-1
+            # For this current row, iterate through each column: 0, 1, 2, n-1
             for cur_col in range(n):
                 # This is the reason why we need only 1 copy of col_placement, even after we get a correct solution.
                 # Let assume we have a solution in the prev cur_col-1 loop.  When we revisit the cur_col in range(n) loop,
@@ -22,7 +24,7 @@ def n_queens(n: int) -> List[List[int]]:
                     abs(col_of_prev_queens - cur_col) not in (0, row-i)
                     for  i, col_of_prev_queens in enumerate(col_placement[:row]) # c = col of previously placed queen
                 ):
-                    col_placement[row] = cur_col # We are REUSING col_placement for each row,col
+                    col_placement[row] = cur_col # We are REUSING col_placement for each row,col ; this means there cannot be any other queens in this col.
                     helper(row + 1)
 
     solutions = []

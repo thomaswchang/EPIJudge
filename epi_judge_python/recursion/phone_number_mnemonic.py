@@ -2,7 +2,8 @@ from typing import List
 
 from test_framework import generic_test, test_utils
 
-# [PROBLEM_TYPE=RECURSION]
+# [PROBLEM_TYPE=RECURSION] P 15.2
+# Given a phone number, return all possible character sequences.
 
 # We use a tuple, the index represents the phone number
 MAPPING = ('0', '1', 'ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ')

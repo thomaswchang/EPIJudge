@@ -281,23 +281,19 @@ def chap9_ds_binary_trees() -> None:
 
         return recurse(tree)
 
-<<<<<<< HEAD
 
     # Pattern2: Via Iteration
 
 
 
 
-def chap10_heaps() -> None:
-=======
 def chap10_ds_heaps() -> None:
->>>>>>> 1b9afb9b7d7f64dfae2895437d32a37ec8f835bd
     """
     - Key Points:
         lookup for find-max|find-min -> O(1)
         insertion | deletion -> O(log n)
 
-    - Heap is a Binary Tree which has the variant: root.value > allChild.value
+    - Heap is a Binary Tree which has the invariant: root.value > allChild.value
         By default, heap refers to max-heap
         min-heap : root.value <= child.value
 
@@ -580,7 +576,7 @@ def chap15_algo_recursion() -> None:
         * To calculate time complexity: O(n) often depends on the number of recursive calls, C(n), for each function. (see permutation.py and power_set.py), usually n! or 2^n
     - Pattern
         def function(inputA):
-            def recurse(states: {ex: i - index to inputA, currCanddiate} ):  # states represent the variables used in the recurrence
+            def recurse(states: {ex: i - index to inputA, currCandidate} ):  # states represent the variables used in the recurrence
                 if baseCondition(states)
                     solution.append
                 for i in iterable():
@@ -644,7 +640,7 @@ def chap16_algo_dp() -> None:
             Ex: diceTargetSum:
                 Variables: dices, values, target
                 Let assume we have 5 dices, each with 6 values
-        Property1: Overlapping subproblems
+        Property1: Overlapping sub-problems
             Solution to a sub-problem is used over and over.  Binary search can use recursion, but we do not reuse solutions.
             Applied to memoization (top down)
             similar to recursion but we use a lookup table before computing solution
@@ -688,7 +684,7 @@ def chap16_algo_dp() -> None:
             coinChange
 
         Tabulation makes the problem iterative; bottom up.
-            longestPali | coinChange
+            longestPalindrome | coinChange
     """
 
     # ----------------------------

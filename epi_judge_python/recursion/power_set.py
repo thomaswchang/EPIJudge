@@ -2,7 +2,7 @@ from typing import List
 
 from test_framework import generic_test, test_utils
 
-# [PROBLEM_TYPE=RECURSION]
+# [PROBLEM_TYPE=RECURSION] P15.5
 
 # Given: S={0,1,2}
 # SOLUTION: [0], [1], [2], [0,1], [0,2], ... [0,1,2]
@@ -17,6 +17,7 @@ def generate_power_set(input_set: List[int]) -> List[List[int]]:
             solutions.append(candidate)
             return
 
+        # At each index position i, we either include or not include the element.
         recurse(i+1, candidate)
         recurse(i+1, candidate + [input_set[i]])
 

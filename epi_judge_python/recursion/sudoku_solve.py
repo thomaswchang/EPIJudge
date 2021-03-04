@@ -8,7 +8,7 @@ from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
 
-# [PROBLEM_TYPE=RECURSION]
+# [PROBLEM_TYPE=RECURSION] P15.10 P238
 
 def solve_sudoku(partial_assignment: List[List[int]]) -> bool:
     def iterate(r, c) -> bool:
@@ -18,7 +18,7 @@ def solve_sudoku(partial_assignment: List[List[int]]) -> bool:
             if c >= numCols: # base condition
                 return True
 
-        if partial_assignment[r][c] != 0:
+        if partial_assignment[r][c] != 0: # 0 means blank
             return iterate(r +1, c)
 
         def checkIsValid(r,c, val):
@@ -37,11 +37,12 @@ def solve_sudoku(partial_assignment: List[List[int]]) -> bool:
 
             return True
 
+        # For each (r, c), try all possible values between 1-9
         for val in range(1, numRows+1):
             if checkIsValid(r, c, val):
-                partial_assignment[r][c] = val
+                partial_assignment[r][c] = val # Let's try this value
                 if iterate(r+1, c):
-                    return True
+                    return True # If number is valid, we found a value for (r, c)
 
         partial_assignment[r][c] = 0
 
