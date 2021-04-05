@@ -311,9 +311,16 @@ def chap10_ds_heaps() -> None:
     # ----------------------------
     # Know you libraries
     # ----------------------------
+    # Binary heap: In a heap tree, the value in a node is always smaller than both of its children. This is called the heap property
+    # Algorithm		Average	    Worst case
+    # Space		    O(n)	    O(n)
+    # Search		O(n)	    O(n)
+    # Insert		O(1)	    O(log n)
+    # Find-min		O(1)	    O(1)
+    # Delete-min	O(log n)	O(log n)
     h = [1, 100, 4, -100]
     import heapq                # implements min heap. For max-heap, multiply each element in h by -1
-    heapq.heapify(h)            # in place, ie don't need to assign, like l.sort. [-100, 1, 4, 100]
+    heapq.heapify(h)            # in place, ie don't need to assign, like l.sort. [-100, 1, 4, 100] ; linear time
     heapq.heappush(h, -110)     # [-110, -100, 4, 100, 1]
     smallest = heapq.heappop(h) # smallest=-110 h=[-100, 1, 4, 100]
     smallestWithoutPop = h[0]

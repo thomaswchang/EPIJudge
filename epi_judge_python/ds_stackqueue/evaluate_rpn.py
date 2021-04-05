@@ -9,10 +9,10 @@ def evaluate(expression: str) -> int:
     intermediate_results = [] #: List[int]
     delimiter = ','
     operators = {
-        '+' : lambda y, x: x+y,   # order of parameter y, x matters.  For div and sub, rpn stack latest eleemnt is bigger
-        '-' : lambda y, x: x-y,
-        '*' : lambda y, x: x*y,
-        '/' : lambda y, x: x//y
+        '+': lambda y, x: x+y,   # order of parameter y, x matters. For div and sub, rpn stack latest eleemnt is bigger
+        '-': lambda y, x: x-y,
+        '*': lambda y, x: x*y,
+        '/': lambda y, x: x//y
     }
 
     for token in expression.split(delimiter):

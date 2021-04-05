@@ -34,14 +34,14 @@ def combinations(n: int, k: int) -> List[List[int]]:
 
         # How much do you not cover from the end
         remaining = k - len(curr_candidate)
-        i = offset
+        i = offset # i is NOT the index; it is the value of our array from [1, .., n]
 
         while i <= n and remaining <= n -i +1 :
             recurse(i+1, curr_candidate + [i])
             i += 1
 
     solutions: List[List[int]] = []
-    recurse(1, [])      # Reframe the problem from base 1 to make it easier
+    recurse(1, [])    # Reframe the problem from base 1 to make it easier
     return solutions
 
 if __name__ == '__main__':

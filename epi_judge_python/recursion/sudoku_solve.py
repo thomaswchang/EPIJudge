@@ -15,14 +15,14 @@ def solve_sudoku(partial_assignment: List[List[int]]) -> bool:
         if r == numRows:
             r = 0
             c +=1
-            if c >= numCols: # base condition
+            if c >= numCols:# base condition
                 return True
 
         if partial_assignment[r][c] != 0: # 0 means blank
             return iterate(r +1, c)
 
         def checkIsValid(r,c, val):
-            # Check for row constrants
+            # Check for row constraints
             if any(val == partial_assignment[k][c] for k in range(numRows)):
                 return False
 
@@ -30,10 +30,10 @@ def solve_sudoku(partial_assignment: List[List[int]]) -> bool:
                 return False
 
             region_size = int(math.sqrt(len(numRows)))
-            R = r // numRows
-            C = c // numCols
-            if any(val == partial_assignment[R+a][C+b] for a, b in itertools.product(range(region_size))):
-                return False
+            R = r // region_size
+            C = c // region_size
+            if any(val == partial_assignment[R+a][C+b] for a, b in itertools.product(range(region_size), repeat=2)):
+                                                                 return False
 
             return True
 

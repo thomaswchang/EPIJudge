@@ -4,8 +4,10 @@ from test_framework import generic_test
 
 # pg 103: P 8.3
 # well formed = [()[]()]
+
+
 def is_well_formed(s: str) -> bool:
-    lookup = { '(': ')', '[':']', '{':'}'}
+    lookup = {'(': ')', '[': ']', '{': '}'}
     left_chars = []
 
     for c in s:

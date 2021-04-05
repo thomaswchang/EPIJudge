@@ -5,7 +5,12 @@ from typing import List
 from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
 
-# [PROBLEM_TYPE=DP]
+# [PROBLEM_TYPE=DP] P255 P16.6
+# Given
+#   - a list of item, each (weight, $),
+#   - a weight constraint w_max
+# Return a subset of items that has maximum values and satisfies the weight constraint
+
 # Step1: How to recognize a problem is a DP? What is the recurrence?
 #   The optimum solution at weight depends on [ weight-statue1, .. , weight-statue2]
 
