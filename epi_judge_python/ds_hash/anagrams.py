@@ -1,12 +1,24 @@
 from typing import List
 
 from test_framework import generic_test, test_utils
+import collections
+from typing import DefaultDict, List
 
 # PROBLEM_TYPE=HASH
+# PG 165
+# Given a list of strings, return a list of grouped anagrams
+
 
 def find_anagrams(dictionary: List[str]) -> List[List[str]]:
-    # TODO - you fill in here.
-    return []
+    infos: DefaultDict[str, List[str]] = collections.defaultdict(list)
+
+    for s in dictionary:
+        infos[''.join(sorted(s))].append(s)
+
+    return [
+        grp for grp in infos.values()
+        if len(grp) >= 2
+    ]
 
 
 if __name__ == '__main__':

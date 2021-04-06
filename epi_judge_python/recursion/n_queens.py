@@ -4,7 +4,7 @@ from test_framework import generic_test
 
 # [PROBLEM_TYPE=RECURSION] P228 P15.3
 
-# Generate all possible combinations where QUEENS are not in the same rows, col, or diaggonal
+# Generate all possible combinations where QUEENS are not in the same rows, col, or diagonal
 
 def n_queens(n: int) -> List[List[int]]:
     def helper(row):

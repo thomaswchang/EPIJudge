@@ -11,8 +11,8 @@ import heapq
 # Given a sequence of numbers, return the median
 
 def online_median(sequence: Iterator[int]) -> List[float]:
-    min_heap : List[int] = []   # Has the higher numbers;
-    max_heap : List[int] = []   # Has the lower numbers
+    min_heap: List[int] = []   # Has the higher numbers
+    max_heap: List[int] = []   # Has the lower numbers
 
     # Constraints
     # len(min_heap) = { len(max_heap) +1, len(max_heap) }
